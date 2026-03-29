@@ -1,0 +1,43 @@
+:root {
+    --animation-duration: 1s;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 16px; 
+    font-family: cursive;
+}
+
+.button {
+    position: relative;
+    padding: 15px 30px;
+    border: none;
+    background-color: lightcoral;
+    color: black;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: background-color 0.3s;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple var(--animation-duration) ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
